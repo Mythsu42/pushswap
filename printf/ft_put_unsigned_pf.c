@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_put_unsigned_pf.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/26 22:41:07 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/07 07:45:11 by ktolba           ###   ########.fr       */
+/*   Created: 2025/06/02 08:00:24 by ktolba            #+#    #+#             */
+/*   Updated: 2025/06/06 16:03:29 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int	main(int argc, char **argv)
+int	ft_put_unsigned_pf(unsigned int n)
 {
-	int	i;
+	int	len;
 
-	i = 1;
-	if (argc < 1)
-		return (ft_printf("need number"));
-	while (i < argc)
-	{
-		if (!ft_checkinput(argv[i++]))
-			return (ft_printf("wrong input"));
-	}
-	return (0);
+	len = 0;
+	if (n >= 10)
+		len += ft_put_unsigned_pf(n / 10);
+	len += ft_putchar_pf((n % 10) + '0');
+	return (len);
 }

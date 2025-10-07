@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_puthexptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/26 22:41:07 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/07 07:45:11 by ktolba           ###   ########.fr       */
+/*   Created: 2025/07/11 04:08:02 by ktolba            #+#    #+#             */
+/*   Updated: 2025/07/11 04:11:21 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int	main(int argc, char **argv)
+int	ft_puthexptr_pf(size_t nbr)
 {
-	int	i;
+	char	*base;
+	int		len;
 
-	i = 1;
-	if (argc < 1)
-		return (ft_printf("need number"));
-	while (i < argc)
-	{
-		if (!ft_checkinput(argv[i++]))
-			return (ft_printf("wrong input"));
-	}
-	return (0);
+	len = 0;
+	base = "0123456789abcdef";
+	if (nbr >= 16)
+		len += ft_puthexptr_pf(nbr / 16);
+	len += ft_putchar_pf(base[nbr % 16]);
+	return (len);
 }

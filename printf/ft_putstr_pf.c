@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_pf.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/26 22:41:07 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/07 07:45:11 by ktolba           ###   ########.fr       */
+/*   Created: 2025/06/01 22:13:59 by ktolba            #+#    #+#             */
+/*   Updated: 2025/06/06 16:03:02 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int	main(int argc, char **argv)
+int	ft_putstr_pf(char *str)
 {
-	int	i;
+	size_t	len;
 
-	i = 1;
-	if (argc < 1)
-		return (ft_printf("need number"));
-	while (i < argc)
-	{
-		if (!ft_checkinput(argv[i++]))
-			return (ft_printf("wrong input"));
-	}
-	return (0);
+	len = 0;
+	if (!str)
+		return (ft_putstr_pf("(null)"));
+	while (str[len])
+		len += ft_putchar_pf(str[len]);
+	return (len);
 }

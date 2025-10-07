@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_checkinput.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/26 22:41:07 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/07 07:45:11 by ktolba           ###   ########.fr       */
+/*   Created: 2025/10/07 05:40:10 by ktolba            #+#    #+#             */
+/*   Updated: 2025/10/07 08:06:04 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	ft_checkinput(char *nbr)
 {
-	int	i;
-
-	i = 1;
-	if (argc < 1)
-		return (ft_printf("need number"));
-	while (i < argc)
-	{
-		if (!ft_checkinput(argv[i++]))
-			return (ft_printf("wrong input"));
-	}
-	return (0);
+	if (!ft_isnumber(nbr) || !ft_checkintrange(ft_atoi(nbr)))
+		return (0);
+	return (1);
 }

@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/26 22:41:07 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/07 07:45:11 by ktolba           ###   ########.fr       */
+/*   Created: 2025/06/01 11:49:43 by ktolba            #+#    #+#             */
+/*   Updated: 2025/10/07 06:38:51 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int	main(int argc, char **argv)
+int	ft_printf(const char *str, ...)
 {
-	int	i;
+	va_list	args;
+	size_t	i;
+	size_t	len;
 
-	i = 1;
-	if (argc < 1)
-		return (ft_printf("need number"));
-	while (i < argc)
+	i = 0;
+	len = 0;
+	va_start(args, str);
+	while (str[i])
 	{
-		if (!ft_checkinput(argv[i++]))
-			return (ft_printf("wrong input"));
+		if (str[i] == '%' && str[i + 1])
+		{
+			len += ft_dispatch_args(args, &str[i + 1]);
+			i++;
+		}
+		else
+			len += ft_putchar_pf(str[i]);
+		i++;
 	}
-	return (0);
+	va_end(args);
+	return (len);
 }

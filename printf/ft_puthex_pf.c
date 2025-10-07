@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_puthex_pf.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/26 22:41:07 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/07 07:45:11 by ktolba           ###   ########.fr       */
+/*   Created: 2025/06/02 10:55:10 by ktolba            #+#    #+#             */
+/*   Updated: 2025/06/06 16:02:47 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int	main(int argc, char **argv)
+int	ft_puthex_pf(unsigned int nbr, int typecase)
 {
-	int	i;
+	char	*base;
+	int		len;
 
-	i = 1;
-	if (argc < 1)
-		return (ft_printf("need number"));
-	while (i < argc)
-	{
-		if (!ft_checkinput(argv[i++]))
-			return (ft_printf("wrong input"));
-	}
-	return (0);
+	len = 0;
+	if (typecase)
+		base = "0123456789ABCDEF";
+	else
+		base = "0123456789abcdef";
+	if (nbr >= 16)
+		len += ft_puthex_pf(nbr / 16, typecase);
+	len += ft_putchar_pf(base[nbr % 16]);
+	return (len);
 }

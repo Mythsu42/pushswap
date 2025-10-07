@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_pf.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/26 22:41:07 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/07 07:45:11 by ktolba           ###   ########.fr       */
+/*   Created: 2025/06/01 22:18:17 by ktolba            #+#    #+#             */
+/*   Updated: 2025/06/06 16:03:41 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int	main(int argc, char **argv)
+int	ft_putnbr_pf(int nb)
 {
-	int	i;
+	long int	nbr;
+	int			len;
 
-	i = 1;
-	if (argc < 1)
-		return (ft_printf("need number"));
-	while (i < argc)
+	nbr = nb;
+	len = 0;
+	if (nbr < 0)
 	{
-		if (!ft_checkinput(argv[i++]))
-			return (ft_printf("wrong input"));
+		write(1, "-", 1);
+		nbr *= -1;
+		len++;
 	}
-	return (0);
+	if (nbr > 9)
+		len += ft_putnbr_pf(nbr / 10);
+	len += ft_putchar_pf(nbr % 10 + '0');
+	return (len);
 }
