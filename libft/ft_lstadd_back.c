@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checkinput.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 05:40:10 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/08 03:56:28 by ktolba           ###   ########.fr       */
+/*   Created: 2025/05/19 19:15:13 by ktolba            #+#    #+#             */
+/*   Updated: 2025/05/25 11:28:45 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	ft_checkinput(char *nbr)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!ft_isnumber(nbr) || !ft_intrange(ft_atoi(nbr)))
-		return (0);
-	return (1);
+	t_list	*tmp;
+
+	if (!lst || !new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	tmp = *lst;
+	while (tmp->next)
+	{
+		tmp = tmp->next;
+	}
+	tmp->next = new;
 }

@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checkinput.c                                    :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 05:40:10 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/08 03:56:28 by ktolba           ###   ########.fr       */
+/*   Created: 2025/05/16 17:50:57 by ktolba            #+#    #+#             */
+/*   Updated: 2025/05/19 18:36:02 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	ft_checkinput(char *nbr)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (!ft_isnumber(nbr) || !ft_intrange(ft_atoi(nbr)))
-		return (0);
-	return (1);
+	while (lst)
+	{
+		if (!lst->next)
+			return (lst);
+		lst = lst->next;
+	}
+	return (lst);
 }

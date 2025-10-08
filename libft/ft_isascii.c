@@ -1,20 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checkinput.c                                    :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
+/*   By: ktolba <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 05:40:10 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/08 03:56:28 by ktolba           ###   ########.fr       */
+/*   Created: 2025/04/29 23:36:43 by ktolba            #+#    #+#             */
+/*   Updated: 2025/05/20 12:57:21 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "push_swap.h"
-
-int	ft_checkinput(char *nbr)
+int	ft_isascii(int c)
 {
-	if (!ft_isnumber(nbr) || !ft_intrange(ft_atoi(nbr)))
-		return (0);
-	return (1);
+	return (c >= 0 && c <= 127);
 }

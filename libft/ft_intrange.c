@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checkinput.c                                    :+:      :+:    :+:   */
+/*   ft_intrange.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 05:40:10 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/08 03:56:28 by ktolba           ###   ########.fr       */
+/*   Created: 2025/10/08 03:54:00 by ktolba            #+#    #+#             */
+/*   Updated: 2025/10/08 03:54:32 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	ft_checkinput(char *nbr)
+int	ft_intrange(long n)
 {
-	if (!ft_isnumber(nbr) || !ft_intrange(ft_atoi(nbr)))
+	if (n < INT_MIN || n > INT_MAX)
 		return (0);
 	return (1);
 }

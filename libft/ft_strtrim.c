@@ -1,20 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checkinput.c                                    :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 05:40:10 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/08 03:56:28 by ktolba           ###   ########.fr       */
+/*   Created: 2025/05/19 18:00:50 by ktolba            #+#    #+#             */
+/*   Updated: 2025/05/25 16:30:27 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	ft_checkinput(char *nbr)
+char	*ft_strtrim(char const *str, char const *set)
 {
-	if (!ft_isnumber(nbr) || !ft_intrange(ft_atoi(nbr)))
-		return (0);
-	return (1);
+	size_t	start;
+	size_t	end;
+	size_t	i;
+
+	start = 0;
+	end = ft_strlen(str);
+	i = 0;
+	if (!str || !set)
+		return (NULL);
+	while (set[i])
+	{
+		if (str[start] == set[i])
+		{
+			i = -1;
+			start++;
+		}
+		if (str[end - 1] == set[i])
+		{
+			i = -1;
+			end--;
+		}
+		i++;
+	}
+	return (ft_substr(str, start, end - start));
 }

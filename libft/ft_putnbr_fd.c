@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checkinput.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
+/*   By: ktolba <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 05:40:10 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/08 03:56:28 by ktolba           ###   ########.fr       */
+/*   Created: 2025/04/29 23:39:28 by ktolba            #+#    #+#             */
+/*   Updated: 2025/05/24 00:52:56 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	ft_checkinput(char *nbr)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	if (!ft_isnumber(nbr) || !ft_intrange(ft_atoi(nbr)))
-		return (0);
-	return (1);
+	long int	nbr;
+
+	nbr = nb;
+	if (nbr < 0)
+	{
+		write(fd, "-", 1);
+		nbr *= -1;
+	}
+	if (nbr > 9)
+		ft_putnbr_fd(nbr / 10, fd);
+	ft_putchar_fd(nbr % 10 + '0', fd);
 }

@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checkinput.c                                    :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
+/*   By: ktolba <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 05:40:10 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/08 03:56:28 by ktolba           ###   ########.fr       */
+/*   Created: 2025/04/29 23:56:52 by ktolba            #+#    #+#             */
+/*   Updated: 2025/04/29 23:56:55 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "push_swap.h"
-
-int	ft_checkinput(char *nbr)
+int	ft_tolower(int c)
 {
-	if (!ft_isnumber(nbr) || !ft_intrange(ft_atoi(nbr)))
-		return (0);
-	return (1);
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	return (c);
 }
