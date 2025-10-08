@@ -6,7 +6,7 @@
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 22:41:07 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/07 07:45:11 by ktolba           ###   ########.fr       */
+/*   Updated: 2025/10/07 09:42:16 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ int	main(int argc, char **argv)
 	{
 		if (!ft_checkinput(argv[i++]))
 			return (ft_printf("wrong input"));
+	}
+	i = 1;
+	while (i < argc) 
+	{
+		ft_printf(argv[i++]);
+		write(1, "\n", 1);
 	}
 	return (0);
 }
