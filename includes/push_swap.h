@@ -6,7 +6,7 @@
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 20:13:27 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/09 14:08:52 by ktolba           ###   ########.fr       */
+/*   Updated: 2025/10/11 02:46:42 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,33 +16,36 @@
 # include "libft.h"
 # include "ft_printf.h"
 
-typedef struct s_content
+typedef struct s_stack
 {
 	int	value;
 	int	rank;
-}	t_content;
+	struct s_stack	*next;
+}	t_stack;
 
-typedef struct s_list
-{
-	t_content		*content;
-	struct s_list	*next;
-}	t_list;
+void    sa(t_stack **a);
+void    sb(t_stack **b);
+void    ss(t_stack **a, t_stack **b);
 
-void	sa(t_list **a);
-void	sb(t_list **b);
-void	ss(t_list **a, t_list **b);
+void    pa(t_stack **a, t_stack **b);
+void    pb(t_stack **a, t_stack **b);
 
-void	pa(t_list **a, t_list **b);
-void	pb(t_list **a, t_list **b);
+void    ra(t_stack **a);
+void    rb(t_stack **b);
+void    rr(t_stack **a, t_stack **b);
 
-void	ra(t_list **a);
-void	rb(t_list **b);
-void	rr(t_list **a, t_list **b);
+void    rra(t_stack **a);
+void    rrb(t_stack **b);
+void    rrr(t_stack **a, t_stack **b);
 
-void	rra(t_list **a);
-void	rrb(t_list **b);
-void	rrr(t_list **a, t_list **b);
+void	ft_assign_rank(t_stack *stack);
+
+void	ft_stackiter(t_stack *stack, void (*f)(t_stack *));
+void	ft_stackadd_back(t_stack **stack, t_stack *new);
+void	ft_print_node(t_stack *node);
 
 int		ft_checkinput(char *nbr);
+int	ft_checkduplicate(char **argv);
 
+t_stack *ft_newnode(int value);
 #endif
