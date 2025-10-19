@@ -6,7 +6,7 @@
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 08:10:27 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/19 08:15:16 by ktolba           ###   ########.fr       */
+/*   Updated: 2025/10/19 19:51:04 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_free_stack(t_stack **stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!stack || !*stack)
 		return ;

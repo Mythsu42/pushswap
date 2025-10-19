@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_chunk.c                                    :+:      :+:    :+:   */
+/*   ft_pos.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 16:55:50 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/19 19:50:21 by ktolba           ###   ########.fr       */
+/*   Created: 2025/10/19 09:33:13 by ktolba            #+#    #+#             */
+/*   Updated: 2025/10/19 09:50:04 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_push_chunk(t_stack **a, t_stack **b, int min, int max)
+int	ft_pos(t_stack *stack, int rank)
 {
-	while (ft_has_chunk(*a, min, max))
+	int	pos;
+
+	pos = 0;
+	while (stack)
 	{
-		if ((*a)->rank >= min && (*a)->rank < max)
-			pb(a, b);
-		else
-			ra(a);
+		if (stack->rank == rank)
+			return (pos);
+		stack = stack->next;
+		pos++;
 	}
+	return (ft_printf("ereur dans le retour de postion"));
 }

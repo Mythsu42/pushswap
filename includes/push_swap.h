@@ -6,7 +6,7 @@
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 20:13:27 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/19 08:31:23 by ktolba           ###   ########.fr       */
+/*   Updated: 2025/10/19 19:52:04 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ void	ft_sort_three(t_stack **a);
 void	ft_move_min_to_top(t_stack **a, t_stack *min);
 void	ft_sort_five(t_stack **a, t_stack **b);
 void	ft_chunk_sort(t_stack **a, t_stack **b, int chunk_size);
-void    ft_push_chunk(t_stack **a, t_stack **b, int min, int max);
-void    ft_bring_for_next_chunk(t_stack **a, int rank);
-void    ft_target_pa(t_stack **a, t_stack **b, int min, int max);
+void	ft_push_chunk(t_stack **a, t_stack **b, int min, int max);
+void	ft_bring_for_next_chunk(t_stack **a, int rank);
+void	ft_target_pa(t_stack **a, t_stack **b, int min, int max);
 void	ft_free_stack(t_stack **stack);
 
 int		ft_init_stack(int argc, char **argv, t_stack **a);
@@ -55,8 +55,9 @@ int		ft_checkintrange(const char *str);
 int		ft_stack_size(t_stack *stack);
 int		ft_get_chunk_size(int size);
 int		ft_has_chunk(t_stack *a, int min, int max);
+int		ft_pos(t_stack *stack, int rank);
 
 t_stack	*ft_newnode(int value);
 t_stack	*find_min(t_stack *stack);
-t_stack *ft_stacklast(t_stack *stack);
+t_stack	*ft_stacklast(t_stack *stack);
 #endif
