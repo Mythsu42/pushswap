@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ss.c                                               :+:      :+:    :+:   */
+/*   pb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 03:08:45 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/11 03:18:51 by ktolba           ###   ########.fr       */
+/*   Created: 2025/10/11 03:19:48 by ktolba            #+#    #+#             */
+/*   Updated: 2025/10/15 13:40:19 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
-void	ss(t_stack **a, t_stack **b)
+void	pb(t_stack **a, t_stack **b)
 {
-	ft_sa(a);
-	ft_sb(b);
-	ft_printf("ss\n");
+	t_stack	*tmp;
+
+	if (!a || !*a)
+		return ;
+	tmp = *a;
+	*a = (*a)->next;
+	tmp->next = NULL;
+	tmp->next = *b;
+	*b = tmp;
+	ft_printf("pb\n");
 }

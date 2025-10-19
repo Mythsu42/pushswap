@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intrange.c                                      :+:      :+:    :+:   */
+/*   rr.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 03:54:00 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/19 08:25:54 by ktolba           ###   ########.fr       */
+/*   Created: 2025/10/11 09:40:07 by ktolba            #+#    #+#             */
+/*   Updated: 2025/10/14 20:11:13 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_intrange(int n)
+void	rr(t_stack **a, t_stack **b)
 {
-	if (n < INT_MIN || n > INT_MAX)
-		return (0);
-	return (1);
+	ra(a);
+	rb(b);
+	ft_printf("rr\n");
 }

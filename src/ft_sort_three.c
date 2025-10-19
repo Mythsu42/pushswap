@@ -6,13 +6,13 @@
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 10:58:13 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/11 10:59:39 by ktolba           ###   ########.fr       */
+/*   Updated: 2025/10/11 12:43:33 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(t_stack **a)
+void	ft_sort_three(t_stack **a)
 {
 	int	first;
 	int	second;

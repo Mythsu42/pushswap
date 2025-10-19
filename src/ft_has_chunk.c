@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrb.c                                              :+:      :+:    :+:   */
+/*   ft_has_chunk.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 09:44:46 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/11 09:45:10 by ktolba           ###   ########.fr       */
+/*   Created: 2025/10/14 17:35:12 by ktolba            #+#    #+#             */
+/*   Updated: 2025/10/15 13:31:40 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "prush_swap.c"
+#include "push_swap.h"
 
-void	rrb(t_stack **b)
+int	ft_has_chunk(t_stack *a, int min, int max)
 {
-	t_stack	*prev;
-	t_stack	*last;
-
-	if (!b || !*b || !(*b)->next)
-		return ;
-	prev = NULL;
-	last = *b;
-	while (last->next)
+	while (a)
 	{
-		prev = last;
-		last = last->next;
+		if (a->rank >= min && a->rank < max)
+			return (1);
+		a = a->next;
 	}
-	prev->next = NULL;
-	last->next = *b;
-	*b = last;
-	ft_printf("rrb\n");
+	return (0);
 }

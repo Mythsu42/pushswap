@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intrange.c                                      :+:      :+:    :+:   */
+/*   ft_push_chunk.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 03:54:00 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/19 08:25:54 by ktolba           ###   ########.fr       */
+/*   Created: 2025/10/14 16:55:50 by ktolba            #+#    #+#             */
+/*   Updated: 2025/10/14 19:50:14 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_intrange(int n)
+void	ft_push_chunk(t_stack **a, t_stack **b, int min, int max)
 {
-	if (n < INT_MIN || n > INT_MAX)
-		return (0);
-	return (1);
+	while (ft_has_chunk(*a, min, max))
+	{
+		if ((*a)->rank >= min && (*a)->rank < max)
+			pb(a, b);
+		else
+			ra(a);	
+	}
 }

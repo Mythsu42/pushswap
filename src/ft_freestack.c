@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rra.c                                              :+:      :+:    :+:   */
+/*   ft_freestack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 09:45:38 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/11 09:45:48 by ktolba           ###   ########.fr       */
+/*   Created: 2025/10/19 08:10:27 by ktolba            #+#    #+#             */
+/*   Updated: 2025/10/19 08:15:16 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra(t_stack **a)
+void	ft_free_stack(t_stack **stack)
 {
-	t_stack	*prev;
-	t_stack	*last;
+	t_stack *tmp;
 
-	if (!a || !*a || !(*a)->next)
+	if (!stack || !*stack)
 		return ;
-	prev = NULL;
-	last = *a;
-	while (last->next)
+	while (*stack)
 	{
-		prev = last;
-		last = last->next;
+		tmp = *stack;
+		*stack = (*stack)->next;
+		free(tmp);
 	}
-	prev->next = NULL;
-	last->next = *a;
-	*a = last;
-	ft_printf("rra\n");
 }

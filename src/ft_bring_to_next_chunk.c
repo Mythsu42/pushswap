@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pb.c                                               :+:      :+:    :+:   */
+/*   ft_bring_to_next_chunk.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 03:19:48 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/11 03:20:31 by ktolba           ###   ########.fr       */
+/*   Created: 2025/10/14 19:21:21 by ktolba            #+#    #+#             */
+/*   Updated: 2025/10/19 07:27:49 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pb(t_stack **a, t_stack **b)
+void	ft_bring_for_next_chunk(t_stack **a, int chunk_max)
 {
-	t_stack	*tmp;
-
 	if (!a || !*a)
 		return ;
-	tmp = *a;
-	*a = (*a)->next;
-	tmp->next = *b;
-	*b = tmp;
-	ft_printf("pb\n");
+	while (ft_stacklast(*a)->rank != chunk_max)
+		rra(a);
 }

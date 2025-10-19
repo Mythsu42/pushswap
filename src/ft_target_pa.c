@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intrange.c                                      :+:      :+:    :+:   */
+/*   ft_target_pa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 03:54:00 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/19 08:25:54 by ktolba           ###   ########.fr       */
+/*   Created: 2025/10/14 18:19:17 by ktolba            #+#    #+#             */
+/*   Updated: 2025/10/19 08:52:56 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_intrange(int n)
+void	ft_target_pa(t_stack **a, t_stack **b, int min, int max)
 {
-	if (n < INT_MIN || n > INT_MAX)
-		return (0);
-	return (1);
+	while (min <= max)
+	{
+		if (!b || !*b)
+			return ;
+		if ((*b)->rank == min)
+		{
+			pa(a, b);
+			ra(a);
+			min++;
+		}
+		else if ((*b)->rank == max)
+		{
+			pa(a, b);
+			max--;
+		}
+		else
+			rb(b);
+	}
 }

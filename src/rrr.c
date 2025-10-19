@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa.c                                               :+:      :+:    :+:   */
+/*   rrr.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 03:19:12 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/11 03:19:30 by ktolba           ###   ########.fr       */
+/*   Created: 2025/10/11 09:43:51 by ktolba            #+#    #+#             */
+/*   Updated: 2025/10/14 16:05:22 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
-void	pa(t_stack **a, t_stack **b)
+void	rrr(t_stack **a, t_stack **b)
 {
-	t_stack	*tmp;
-
-	if (!b || !*b)
-		return ;
-	tmp = *b;
-	*b = (*b)->next;
-	tmp->next = *a;
-	*a = tmp;
-	ft_printf("pa\n");
+	rra(a);
+	rrb(b);
+	ft_printf("rrr\n");
 }

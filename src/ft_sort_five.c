@@ -6,13 +6,13 @@
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:26:47 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/11 11:28:56 by ktolba           ###   ########.fr       */
+/*   Updated: 2025/10/14 20:31:01 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*find_min(t_stack *stack)
+t_stack	*ft_find_min(t_stack *stack)
 {
 	t_stack	*min;
 
@@ -26,7 +26,7 @@ t_stack	*find_min(t_stack *stack)
 	return (min);
 }
 
-void	move_min_to_top(t_stack **a, t_stack *min)
+void	ft_move_min_to_top(t_stack **a, t_stack *min)
 {
 	t_stack	*tmp;
 	int		i;
@@ -54,17 +54,17 @@ void	move_min_to_top(t_stack **a, t_stack *min)
 			rra(a);
 }
 
-void	sort_five(t_stack **a, t_stack **b)
+void	ft_sort_five(t_stack **a, t_stack **b)
 {
 	t_stack	*min;
 
-	while ((*a)->next->next->next->next)
+	while (ft_stack_size(*a) > 3)
 	{
-		min = find_min(*a);
-		move_min_to_top(a, min);
+		min = ft_find_min(*a);
+		ft_move_min_to_top(a, min);
 		pb(a, b);
 	}
-	sort_three(a);
+	ft_sort_three(a);
 	if ((*b)->rank < (*b)->next->rank)
 		sb(b);
 	pa(a, b);

@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intrange.c                                      :+:      :+:    :+:   */
+/*   ft_stack_size.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 03:54:00 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/19 08:25:54 by ktolba           ###   ########.fr       */
+/*   Created: 2025/10/11 12:15:01 by ktolba            #+#    #+#             */
+/*   Updated: 2025/10/11 12:15:29 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_intrange(int n)
+int	ft_stack_size(t_stack *stack)
 {
-	if (n < INT_MIN || n > INT_MAX)
-		return (0);
-	return (1);
+	int	count;
+
+	count = 0;
+	while (stack)
+	{
+		count++;
+		stack = stack->next;
+	}
+	return (count);
 }

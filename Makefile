@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRCS = $(wildcard src/*.c src/instruction/*.c)
+SRCS = $(wildcard src/*.c)
 OBJS = $(SRCS:src/%.c=obj/%.o)
 
 LIBFT = libft/libft.a

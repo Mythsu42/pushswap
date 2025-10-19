@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intrange.c                                      :+:      :+:    :+:   */
+/*   rrb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 03:54:00 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/19 08:25:54 by ktolba           ###   ########.fr       */
+/*   Created: 2025/10/11 09:44:46 by ktolba            #+#    #+#             */
+/*   Updated: 2025/10/14 20:11:40 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_intrange(int n)
+void	rrb(t_stack **b)
 {
-	if (n < INT_MIN || n > INT_MAX)
-		return (0);
-	return (1);
+	t_stack	*prev;
+	t_stack	*last;
+
+	if (!b || !*b || !(*b)->next)
+		return ;
+	prev = NULL;
+	last = *b;
+	while (last->next)
+	{
+		prev = last;
+		last = last->next;
+	}
+	prev->next = NULL;
+	last->next = *b;
+	*b = last;
+	ft_printf("rrb\n");
 }

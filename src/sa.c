@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrr.c                                              :+:      :+:    :+:   */
+/*   sa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 09:43:51 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/11 09:44:26 by ktolba           ###   ########.fr       */
+/*   Created: 2025/10/11 02:51:47 by ktolba            #+#    #+#             */
+/*   Updated: 2025/10/14 20:12:16 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.c"
+#include "push_swap.h"
 
-void	rrr(t_stack **a, t_stack **b)
+void	sa(t_stack **a)
 {
-	rra(a);
-	rrb(b);
-	ft_printf("rrr\n");
+	t_stack	*first;
+	t_stack	*second;
+
+	if (!a || !*a || !(*a)->next)
+		return ;
+	first = *a;
+	second = (*a)->next;
+	first->next = second->next;
+	second->next = first;
+	*a = second;
+	ft_printf("sa\n");
 }
