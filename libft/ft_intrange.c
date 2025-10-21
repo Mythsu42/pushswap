@@ -6,13 +6,13 @@
 /*   By: ktolba <tolbakevin@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 03:54:00 by ktolba            #+#    #+#             */
-/*   Updated: 2025/10/19 08:25:54 by ktolba           ###   ########.fr       */
+/*   Updated: 2025/10/21 19:01:44 by ktolba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_intrange(int n)
+int	ft_intrange(long n)
 {
 	if (n < INT_MIN || n > INT_MAX)
 		return (0);
